@@ -34,12 +34,12 @@ class FreelancerController extends AbstractController
        
         // Créez un nouvel employeur
         $freelancer = new Freelancer();
-        $freelancer->setFirstname($data['firstname']);
+        $freelancer->setFirstname('salwa');
         $freelancer->setLastname($data['lastname']);
         $encodedPassword = $passwordEncoder->encodePassword($freelancer, $data['password']);
         $freelancer->setPassword($encodedPassword);
         $freelancer->setEmail($data['email']);
-        $freelancer->setRoles(array('ROLE_TESTFREELANCER'));
+        $freelancer->setRoles(array('ROLE_FREELANCER'));
         $freelancer->setCompetences($data['competences']);
 
         $cv = $request->files->get('Cv');
