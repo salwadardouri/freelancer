@@ -34,7 +34,7 @@ class FreelancerController extends AbstractController
        
         // Créez un nouvel employeur
         $freelancer = new Freelancer();
-        $freelancer->setFirstname('salwa');
+        $freelancer->setFirstname($data['firstname']);
         $freelancer->setLastname($data['lastname']);
         $encodedPassword = $passwordEncoder->encodePassword($freelancer, $data['password']);
         $freelancer->setPassword($encodedPassword);
