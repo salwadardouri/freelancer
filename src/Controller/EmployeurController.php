@@ -68,7 +68,14 @@ class EmployeurController extends AbstractFOSRestController
 
 
 
- 
+         /**
+     * @Route("/employeur/get",  methods={"GET"})
+     */
+    public function getAll(EmployeursRepository $employeursRepository)
+    {
+
+        return $this->json($employeursRepository->findAll(), 200, [], ['groups' => 'GetOffreEmpoyeur']);
+    }
 
       /**
      * @Route("/token")
